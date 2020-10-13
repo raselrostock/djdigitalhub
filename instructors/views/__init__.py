@@ -1,0 +1,2 @@
+from instructors.views.instructor_list import InstructorListView
+from instructors.views.instructor_detail import InstructorDetailView
