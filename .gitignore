@@ -27,5 +27,6 @@ build/ # Webpack build output
 .env 
 
 # Assets
+assets/
 static/
 media/
