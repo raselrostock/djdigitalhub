@@ -1,0 +1,3 @@
+from notifications.views.notification_list import NotificationListView
+from notifications.views.notification_show import ShowNotificationView
+from notifications.views.notification_delete import DeleteNotificationView
