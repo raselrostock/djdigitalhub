@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed App
     'memberships.apps.MembershipsConfig',
+    'courses.apps.CoursesConfig',
     'instructors.apps.InstructorsConfig',
     # Thirdparty App
 ]
@@ -109,3 +110,8 @@ SESSION_COOKIE_SECURE = False
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+try:
+    from .ck_editor import *
+except Exception as e:
+    pass
