@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Installed App
+    'memberships.apps.MembershipsConfig',
     'instructors.apps.InstructorsConfig',
     # Thirdparty App
 ]
