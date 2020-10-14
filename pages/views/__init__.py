@@ -1,0 +1,1 @@
+from pages.views.faqs import faqView
