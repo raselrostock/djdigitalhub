@@ -21,10 +21,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Installed App
-    'memberships.apps.MembershipsConfig',
+    'accounts.apps.AccountsConfig',
     'courses.apps.CoursesConfig',
     'instructors.apps.InstructorsConfig',
+    'memberships.apps.MembershipsConfig',
+    'notifications.apps.NotificationsConfig',
+    'pages.apps.PagesConfig',
+    'quizes.apps.QuizesConfig',
+    'search.apps.SearchConfig',
+    'subscriptions.apps.SubscriptionsConfig',
     # Thirdparty App
+    'ckeditor',
+    'ckeditor_uploader',
+    'crispy_forms',
+    'django.contrib.humanize',
+    'django.contrib.sitemaps',
+    'haystack',
+    'imagekit',
+    'whoosh',
 ]
 
 
@@ -35,6 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -59,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'notifications.context_processors.notification_count',
             ],
         },
     },
@@ -67,8 +83,6 @@ TEMPLATES = [
 ################################
 ##      INTERNALIZATION       ##
 ################################
-
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -96,6 +110,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 
 WSGI_APPLICATION = 'djdigitalhub.wsgi.application'
 
+###############################
+##    LOGIN CONFIGURATION    ##
+###############################
+
+LOGIN_REDIRECT_URL = 'memberships:dashboard'
+LOGIN_URL = 'login'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+SITE_ID = 1
+
 ################################
 ##  SECURITY CONFIGURATION    ##
 ################################
@@ -107,11 +131,20 @@ SESSION_COOKIE_SECURE = False
 ################################
 ##   MESSAGE CONFIGURATION    ##
 ################################
+
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-try:
-    from .ck_editor import *
-except Exception as e:
-    pass
+################################
+##  LANGUAGE CONFIGURATION    ##
+################################
+
+from django.utils.translation import ugettext_lazy as _
+LANGUAGES = (
+    ('en', _('EN')),
+    ('de', _('DE')),
+)
+LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'de'
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]

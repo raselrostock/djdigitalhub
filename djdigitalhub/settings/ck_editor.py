@@ -1,7 +1,3 @@
-####################################
-##     CKEDITOR CONFIGURATION     ##
-####################################
-
 CKEDITOR_UPLOAD_PATH = 'ck_uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 
