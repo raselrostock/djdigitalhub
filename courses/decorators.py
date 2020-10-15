@@ -4,6 +4,7 @@ from django.shortcuts import reverse
 from django.http import HttpResponseRedirect
 from functools import wraps
 
+# Model
 from django.contrib.auth.models import User
 from accounts.models import Profile
 

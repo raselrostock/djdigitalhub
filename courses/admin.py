@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 import csv
 
+# Model
 from courses.models import Course, Lesson, Comment, Review
 from instructors.models import Instructor
 from memberships.models import Membership

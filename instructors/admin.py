@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Model
 from instructors.models import Instructor, Rating
 
 class InstructorAdmin(admin.ModelAdmin):

@@ -5,13 +5,17 @@ from django.db.models import Avg, Func
 from django.db.models.signals import pre_save
 from django.urls import reverse
 
+# Third Party Module
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
+# Utility Module
 from djdigitalhub.utils import unique_slug_generator
+
+# Model
 from django.contrib.auth.models import User
 from memberships.models import Membership
 from instructors.models import Instructor
