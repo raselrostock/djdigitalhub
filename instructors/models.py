@@ -20,7 +20,7 @@ class Instructor(models.Model):
     email           = models.EmailField('Email', max_length=64, blank=True, null=True)
     dofb            = models.DateField('Date of Birth', blank=True, null=True)
     biography       = models.TextField('Biography', blank=True, null=True)
-    pro_pic         = ProcessedImageField(upload_to='instructor_pic/', default='avatar.jpg',
+    pro_pic         = ProcessedImageField(upload_to='instructor-pic/', default='avatar.jpg',
                                   processors=[ResizeToFill(180, 180)],
                                   format='JPEG',
                                   options={'quality': 60})

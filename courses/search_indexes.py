@@ -5,7 +5,7 @@ from haystack import indexes
 from courses.models import Course
 
 class CourseIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.EdgeNgramField(document=True, use_template_name="search/indexes/courses/course_text.txt")
+    text = indexes.EdgeNgramField(document=True, use_template=True, template_name="search/indexes/courses/course_text.txt")
     title = indexes.CharField(model_attr='title')
     slug = indexes.CharField(model_attr='slug')
     description = indexes.CharField(model_attr='description')

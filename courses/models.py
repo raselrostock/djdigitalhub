@@ -73,15 +73,15 @@ class Lesson(models.Model):
     title                   = models.CharField('Title', max_length=128, blank=True)
     description             = models.TextField('Description', blank=True)
     extra_info              = models.TextField('Extra Information', blank=True)
-    thumbnail               = ProcessedImageField(default='lesson_bg.jpg', upload_to='lesson_img/',
+    thumbnail               = ProcessedImageField(default='lesson-bg.jpg', upload_to='lesson-img/',
                                     processors=[ResizeToFill(600, 350)],
                                     format='JPEG',
                                     options={'quality': 60})
-    file_1                  = models.FileField(upload_to='lesson_doc/', null=True, blank=True)
-    file_2                  = models.FileField(upload_to='lesson_doc/', null=True, blank=True)
-    file_3                  = models.FileField(upload_to='lesson_doc/', null=True, blank=True)
-    file_4                  = models.FileField(upload_to='lesson_doc/', null=True, blank=True)
-    file_5                  = models.FileField(upload_to='lesson_doc/', null=True, blank=True)
+    file_1                  = models.FileField(upload_to='lesson-doc/', null=True, blank=True)
+    file_2                  = models.FileField(upload_to='lesson-doc/', null=True, blank=True)
+    file_3                  = models.FileField(upload_to='lesson-doc/', null=True, blank=True)
+    file_4                  = models.FileField(upload_to='lesson-doc/', null=True, blank=True)
+    file_5                  = models.FileField(upload_to='lesson-doc/', null=True, blank=True)
     course                  = models.ForeignKey(
         Course, related_name='lessons', on_delete=models.SET_NULL, null=True)
     video_link              = models.CharField(

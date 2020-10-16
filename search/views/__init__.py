@@ -1,0 +1,2 @@
+from search.views.search_query import SearchQueryView
+from search.views.search_autocomplete import SearchQueryAutocomplete

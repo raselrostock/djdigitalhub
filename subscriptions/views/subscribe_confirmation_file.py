@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
 
-from subscriptions.encdecutility.enc_dec_util import *
+from subscriptions.encodeutility.enc_dec_util import *
 
 SUBSCRIBE_STATUS = 'subscribed'
 SEPARATOR = '&'

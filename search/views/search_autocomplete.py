@@ -1,7 +1,7 @@
 import simplejson as json
 
 # Django Module
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
