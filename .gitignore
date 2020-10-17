@@ -14,6 +14,7 @@ __pycache__/
 #Virtualenv
 env/
 venv/
+whoosh/
 
 # Databases
 *.sqlite3

@@ -13,5 +13,9 @@ class Membership(models.Model):
     stripe_plan_id = models.CharField(max_length=64)
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
 
+    class Meta:
+        verbose_name = 'Membership'
+        verbose_name_plural = 'Memberships'
+
     def __str__(self):
         return self.membership_type

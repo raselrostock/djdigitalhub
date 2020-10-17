@@ -22,8 +22,8 @@ DATABASES = {
 ##############################
 ##  HAYSTACK CONFIGURATION  ##
 ##############################
-
-WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
+WHOOSH_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+WHOOSH_INDEX = os.path.join(WHOOSH_DIR, 'whoosh/')
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',

@@ -7,5 +7,9 @@ class SubscribeModel(models.Model):
     created_date            = models.DateTimeField(null=False, blank=True)
     updated_date            = models.DateTimeField(null=False, blank=True)
 
+    class Meta:
+        verbose_name = 'SubscribeModel'
+        verbose_name_plural = 'SubscribeModels'
+
     def __str__(self):
         return self.email

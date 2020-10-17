@@ -1,5 +1,5 @@
 from .base import *
-
+WHOOSH_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ################################
 ##     BASE CONFIGURATION     ##
 ################################
@@ -41,4 +41,45 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-from .email_settings import *
+##############################
+##  HAYSTACK CONFIGURATION  ##
+##############################
+
+WHOOSH_INDEX = os.path.join(WHOOSH_DIR, 'whoosh/')
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': WHOOSH_INDEX,
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+###############################
+##   CKEDITOR CONFIGURATION  ##
+###############################
+try:
+    from .ck_editor import *
+except Exception as e:
+    pass
+
+###############################
+##    LOGGER CONFIGURATION   ##
+###############################
+try:
+    from .logger_settings import *
+except Exception as e:
+    pass
+
+###############################
+##   MAILGUN CONFIGURATION   ##
+###############################
+
+MAILGUN_API_KEY = config('MAILGUN_API_KEY')
+ENCRYPT_KEY = b'i_D8bT2mswqAleNqCAUqRfcxsii4dQRLJk8-E1W0oow='
+
+###############################
+##    STRIPE CONFIGURATION   ##
+###############################
+
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')

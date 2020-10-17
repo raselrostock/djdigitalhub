@@ -10,7 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from subscriptions.validation_utility import validate_email
 from subscriptions.encodeutility.enc_dec_util import *
-from subscriptions.email_utility import *
+from subscriptions.email_utility import send_subscription_email
 
 # Model
 from subscriptions.models import SubscribeModel
@@ -47,8 +47,9 @@ def SubscribeView(request):
             token = encrypt(email + SEPARATOR + str(datetime.time()))
             subscription_confirmation_url = request.build_absolute_uri(
                 reverse('subscriptions:subscription_confirmation'))+'?token='+token
-            status = send_subscription_email(
-                email, subscription_confirmation_url)
+            print(subscription_confirmation_url)
+            status = send_subscription_email(email, subscription_confirmation_url)
+            print("Status" + status)
             if not status:
                 SubscribeModel.objects.get(email=email).delete()
                 logging.getLogger('info_logger').info('Deleted the record from Subscribe table for '+email +

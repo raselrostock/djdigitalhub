@@ -23,5 +23,4 @@ def DashboardView(request):
         'courses': courses,
         'instructors': instructors
     }
-
     return render(request, 'memberships/dashboard.html', context)

@@ -140,11 +140,12 @@ MESSAGE_TAGS = {
 ##  LANGUAGE CONFIGURATION    ##
 ################################
 
+LANGUAGE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from django.utils.translation import ugettext_lazy as _
 LANGUAGES = (
     ('en', _('EN')),
     ('de', _('DE')),
 )
-LANGUAGE_CODE = 'en-us'
-# LANGUAGE_CODE = 'de'
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de'
+LOCALE_PATHS = [os.path.join(LANGUAGE_DIR, 'locale')]
