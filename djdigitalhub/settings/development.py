@@ -1,4 +1,5 @@
 from .base import *
+import os
 
 ################################
 ##     BASE CONFIGURATION     ##
@@ -22,8 +23,9 @@ DATABASES = {
 ##############################
 ##  HAYSTACK CONFIGURATION  ##
 ##############################
-WHOOSH_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-WHOOSH_INDEX = os.path.join(WHOOSH_DIR, 'whoosh/')
+
+from django.utils.translation import ugettext_lazy as _
+WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
@@ -61,3 +63,14 @@ ENCRYPT_KEY = b'i_D8bT2mswqAleNqCAUqRfcxsii4dQRLJk8-E1W0oow='
 
 STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+
+################################
+##  LANGUAGE CONFIGURATION    ##
+################################
+LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', _('EN')),
+    ('de', _('DE')),
+)
+# LANGUAGE_CODE = 'de'
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]

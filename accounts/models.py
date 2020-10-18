@@ -24,7 +24,7 @@ class Profile(models.Model):
     membership              = models.ForeignKey(
         'memberships.Membership', on_delete=models.SET_NULL, null=True)
     stripe_customer_id      = models.CharField(max_length=128)
-    profile_pic             = ProcessedImageField(default='avatar.jpg', upload_to='profile-pic/', processors=[
+    profile_pic             = ProcessedImageField(default='avatar.jpg', upload_to='profile-img/', processors=[
                                       ResizeToFill(200, 200)], format='JPEG', options={'quality': 60})
 
     def __str__(self):

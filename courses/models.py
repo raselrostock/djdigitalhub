@@ -28,7 +28,7 @@ class Course(models.Model):
     title                   = models.CharField('Title', max_length=128, blank=True, null=True)
     description             = RichTextUploadingField(blank=True, null=True)
     extra_info              = models.TextField('Extra Information', blank=True)
-    thumbnail               = ProcessedImageField(default='course_bg.jpg', upload_to='course_img/',
+    thumbnail               = ProcessedImageField(default='course-bg.jpg', upload_to='course-img/',
                                     processors=[ResizeToFill(600, 350)],
                                     format='JPEG',
                                     options={'quality': 60})
@@ -123,8 +123,8 @@ class Comment(models.Model):
     approved_comment        = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name = 'comment'
-        verbose_name_plural = 'comments'
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
         ordering = ['-comment_at', 'author']
 
     def __str__(self):
