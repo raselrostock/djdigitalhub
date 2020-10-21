@@ -37,5 +37,4 @@ def send_subscription_email(email, subscription_confirmation_url):
     template = get_template('subscriptions/subscription_email.html')
     data['html_text'] = template.render(data)
     data['plain_text'] = strip_tags(data['html_text'])
-    print(data)
     return send_email(data)

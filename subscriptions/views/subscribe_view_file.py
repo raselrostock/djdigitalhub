@@ -47,9 +47,7 @@ def SubscribeView(request):
             token = encrypt(email + SEPARATOR + str(datetime.time()))
             subscription_confirmation_url = request.build_absolute_uri(
                 reverse('subscriptions:subscription_confirmation'))+'?token='+token
-            print(subscription_confirmation_url)
             status = send_subscription_email(email, subscription_confirmation_url)
-            print("Status" + status)
             if not status:
                 SubscribeModel.objects.get(email=email).delete()
                 logging.getLogger('info_logger').info('Deleted the record from Subscribe table for '+email +

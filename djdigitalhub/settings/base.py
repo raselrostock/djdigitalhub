@@ -13,14 +13,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 ##  APPLICATION CONFIGURATION ##
 ################################
 
-INSTALLED_APPS = [
+# Default Apps
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Installed App
+]
+
+# Local Apps
+LOCAL_APPS = [
     'accounts.apps.AccountsConfig',
     'courses.apps.CoursesConfig',
     'instructors.apps.InstructorsConfig',
@@ -30,7 +34,10 @@ INSTALLED_APPS = [
     'quizes.apps.QuizesConfig',
     'search.apps.SearchConfig',
     'subscriptions.apps.SubscriptionsConfig',
-    # Thirdparty App
+]
+
+# Thirdparty App
+THIRDPARTY_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
@@ -41,6 +48,7 @@ INSTALLED_APPS = [
     'whoosh',
 ]
 
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRDPARTY_APPS
 
 ###############################
 ##  MIDDLEWARE CONFIGURATION ##

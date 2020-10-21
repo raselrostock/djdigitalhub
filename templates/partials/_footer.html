@@ -48,12 +48,12 @@
                             <h6>Gallery</h6>
                         </div>
                         <div class="gallery-list d-flex justify-content-between flex-wrap">
-                            <a href="{% static 'img/bg-img/gallery1.jpg' %}" class="gallery-img" title="Gallery Image 1"><img src="{% static 'img/bg-img/gallery1.jpg' %}" alt=""></a>
-                            <a href="{% static 'img/bg-img/gallery2.jpg' %}" class="gallery-img" title="Gallery Image 2"><img src="{% static 'img/bg-img/gallery2.jpg' %}" alt=""></a>
-                            <a href="{% static 'img/bg-img/gallery3.jpg' %}" class="gallery-img" title="Gallery Image 3"><img src="{% static 'img/bg-img/gallery3.jpg' %}" alt=""></a>
-                            <a href="{% static 'img/bg-img/gallery4.jpg' %}" class="gallery-img" title="Gallery Image 4"><img src="{% static 'img/bg-img/gallery4.jpg' %}" alt=""></a>
-                            <a href="{% static 'img/bg-img/gallery5.jpg' %}" class="gallery-img" title="Gallery Image 5"><img src="{% static 'img/bg-img/gallery5.jpg' %}" alt=""></a>
-                            <a href="{% static 'img/bg-img/gallery6.jpg' %}" class="gallery-img" title="Gallery Image 6"><img src="{% static 'img/bg-img/gallery6.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery1.jpg' %}" class="gallery-img" title="Gallery Image 1"><img src="{% static 'img/bg-img/gallery1.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery2.jpg' %}" class="gallery-img" title="Gallery Image 2"><img src="{% static 'img/bg-img/gallery2.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery3.jpg' %}" class="gallery-img" title="Gallery Image 3"><img src="{% static 'img/bg-img/gallery3.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery4.jpg' %}" class="gallery-img" title="Gallery Image 4"><img src="{% static 'img/bg-img/gallery4.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery5.jpg' %}" class="gallery-img" title="Gallery Image 5"><img src="{% static 'img/bg-img/gallery5.jpg' %}" alt=""></a>
+                            <a target="_blank" href="{% static 'img/bg-img/gallery6.jpg' %}" class="gallery-img" title="Gallery Image 6"><img src="{% static 'img/bg-img/gallery6.jpg' %}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="col-12">
                     <p>
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved by <a href="www.rostockerlabs.com">RostockerLabs</a>.
+                        All rights reserved by <a href="{% url 'home' %}">RostockerLabs</a>.
                     </p>
                 </div>
             </div>
