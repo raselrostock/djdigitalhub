@@ -27,6 +27,7 @@ build/ # Webpack build output
 # Django
 .env 
 req.txt
+requirements.txt
 
 # Assets
 assets/
