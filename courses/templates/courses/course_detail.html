@@ -55,9 +55,10 @@
                                     {{ course.extra_info}}
                                 </div>
                             {% endif %}
-                            <h4 class="title">Course Outline</h4>
+                            
                             {% for course_type in course.allowed_membership.all  %}
                                 {% ifnotequal course_type|stringformat:"s" "Free" %}
+                                <h4 class="title">Course Outline</h4>
                                     <div class="content">
                                         {% for lesson in course.lessons.all  %}
                                             <ul class="lesson-list">
@@ -69,9 +70,6 @@
                                         {% endfor %}
                                     </div>
                                 {% endifnotequal %}
-                                {% ifequal course_type|stringformat:"s" "Free" %}
-                                <p>You are not eligible to see detail.</p>
-                                {% endifequal %}
                             {% endfor %}
 
                         </div>
