@@ -74,8 +74,11 @@
                                 <div class="panel_text">
                                     <div class="average-rating row pt-40"><!-- average-rating -->
                                         <div class="col-lg-12">
-                                            <h6 class="mb-15">Average Rating</h6>
+                                            
                                             {% if instructor.rating_average %}
+                                                {% ifequal instructor.rating_average.rating_avg None %}
+                                                    <h6 class="mb-15">Does not get any review.</h6>
+                                                {% endifequal %}
                                                 <div class="d-flex flex-row reviews justify-content-between">
                                                     <div class="average-rating__star">
                                                         {% ifequal instructor.rating_average.rating_avg 1.0 %}
@@ -115,6 +118,7 @@
                                                         {% endifequal %}
                                                     </div>
                                                 </div>
+                                            
                                             {% endif %}
                                         </div><!-- /.average-rating -->
                                     </div><!-- /average-rating -->
@@ -240,7 +244,6 @@
                             {% endwith %}
                         {% else %}
                             <div class="feedeback">
-                                <h6>Your Feedback</h6>
                                 <form action="{% url 'instructors:add-rating' instructor.username%}" method="POST">
                                     {% csrf_token %}
                                     <div class="form-group">

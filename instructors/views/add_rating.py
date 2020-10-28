@@ -14,7 +14,6 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def AddRatingView(request, instructor_name):
-    print(instructor_name)
     instructor = get_object_or_404(Instructor, username=instructor_name)
     form = RatingForm(request.POST)
     rating_qr = Rating.objects.filter(user=request.user, instructor=instructor)
