@@ -33,3 +33,6 @@ requirements.txt
 assets/
 static/
 media/
+
+# Backup
+backup/
