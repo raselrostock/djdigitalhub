@@ -1,8 +1,7 @@
 import os
 import logging
 
-BASE_DIR = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+LOGGER_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 LOGGING = {
     'version': 1,
@@ -24,13 +23,13 @@ LOGGING = {
         'errors_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'Logger/logs/ErrorLoggers.log'),
+            'filename': os.path.join(LOGGER_DIR, 'Logger/logs/ErrorLoggers.log'),
             'formatter': 'large',
         },
         'info_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'Logger/logs/InfoLoggers.log'),
+            'filename': os.path.join(LOGGER_DIR, 'Logger/logs/InfoLoggers.log'),
             'formatter': 'large',
         },
     },
